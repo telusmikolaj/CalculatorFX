@@ -11,7 +11,7 @@ import java.io.IOException;
 public class CalcApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("calc.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(CalcApplication.class.getResource("calc.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 260, 350);
         stage.setTitle("Calculator");
         stage.setScene(scene);

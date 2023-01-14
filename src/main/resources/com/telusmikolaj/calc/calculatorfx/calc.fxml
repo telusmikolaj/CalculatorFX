@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="288.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19">
+<GridPane fx:id="mainPanel" maxHeight="352.0" maxWidth="260.0" minHeight="352.0" minWidth="260.0" prefHeight="352.0" prefWidth="260.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="com.telusmikolaj.calc.calculatorfx.DisplayController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -14,32 +17,50 @@
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="93.0" minHeight="10.0" prefHeight="91.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="95.0" minHeight="10.0" prefHeight="95.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="93.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="95.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="168.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="103.0" minHeight="10.0" prefHeight="53.0" />
   </rowConstraints>
    <children>
-      <Button mnemonicParsing="false" prefHeight="214.0" prefWidth="442.0" text="7" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" prefHeight="374.0" prefWidth="446.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" prefHeight="432.0" prefWidth="726.0" text="4" GridPane.rowIndex="3" />
-      <Button mnemonicParsing="false" prefHeight="251.0" prefWidth="653.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <Button mnemonicParsing="false" prefHeight="291.0" prefWidth="475.0" text="3" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" prefHeight="344.0" prefWidth="488.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" prefHeight="313.0" prefWidth="455.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" prefHeight="251.0" prefWidth="656.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-      <Button mnemonicParsing="false" prefHeight="119.0" prefWidth="439.0" text="1" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" prefHeight="95.0" prefWidth="380.0" text="+" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" prefHeight="119.0" prefWidth="374.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-      <Button mnemonicParsing="false" prefHeight="119.0" prefWidth="267.0" text="÷" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" prefHeight="93.0" prefWidth="318.0" text="×" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" prefHeight="203.0" prefWidth="365.0" text="=" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-      <Button mnemonicParsing="false" prefHeight="93.0" prefWidth="379.0" text="∼" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" prefHeight="93.0" prefWidth="270.0" text="x^y" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" prefHeight="93.0" prefWidth="231.0" text="√" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" prefHeight="119.0" prefWidth="437.0" text="0" GridPane.columnSpan="3" GridPane.rowIndex="5" />
-      <TextField GridPane.columnSpan="4" />
+      <Button fx:id="funNumSeven" mnemonicParsing="false" onAction="#getInputCharacter" prefHeight="214.0" prefWidth="442.0" text="7" GridPane.rowIndex="2" />
+      <Button fx:id="funNumEight" mnemonicParsing="false" onAction="#getInputCharacter" prefHeight="374.0" prefWidth="446.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Button fx:id="funNumFour" mnemonicParsing="false" onAction="#getInputCharacter" prefHeight="432.0" prefWidth="726.0" text="4" GridPane.rowIndex="3" />
+      <Button fx:id="funNumFive" mnemonicParsing="false" onAction="#getInputCharacter" prefHeight="251.0" prefWidth="653.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Button fx:id="funNumThree" mnemonicParsing="false" onAction="#getInputCharacter" prefHeight="291.0" prefWidth="475.0" text="3" GridPane.rowIndex="4" />
+      <Button fx:id="funNumTwo" mnemonicParsing="false" onAction="#getInputCharacter" prefHeight="344.0" prefWidth="488.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Button fx:id="funNumNine" mnemonicParsing="false" onAction="#getInputCharacter" prefHeight="313.0" prefWidth="455.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Button fx:id="funNumSix" mnemonicParsing="false" onAction="#getInputCharacter" prefHeight="77.0" prefWidth="65.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <Button fx:id="funNumOne" mnemonicParsing="false" onAction="#getInputCharacter" prefHeight="148.0" prefWidth="94.0" text="1" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <Button fx:id="funOprAdd" disable="true" mnemonicParsing="false" onAction="#getInputCharacter" prefHeight="95.0" prefWidth="380.0" style="-fx-background-color: yellow; -fx-border-color: BLACK;" text="+" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+      <Button fx:id="funOprSub" disable="true" mnemonicParsing="false" onAction="#getInputCharacter" prefHeight="119.0" prefWidth="65.0" style="-fx-background-color: yellow; -fx-border-color: BLACK;" text="-" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+      <Button fx:id="funOprDiv" disable="true" mnemonicParsing="false" onAction="#getInputCharacter" prefHeight="58.0" prefWidth="65.0" style="-fx-background-color: yellow; -fx-border-color: BLACK;" text="÷" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+      <Button fx:id="funOprMulti" disable="true" mnemonicParsing="false" onAction="#getInputCharacter" prefHeight="75.0" prefWidth="96.0" style="-fx-background-color: yellow; -fx-border-color: BLACK;" text="×" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+      <Button fx:id="equalsSign" disable="true" mnemonicParsing="false" onAction="#getInputCharacter" prefHeight="140.0" prefWidth="80.0" style="-fx-background-color: yellow; -fx-border-color: BLACK;" text="=" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+      <Button fx:id="funOprNeg" disable="true" mnemonicParsing="false" onAction="#solveNegation" prefHeight="93.0" prefWidth="379.0" style="-fx-background-color: RED; -fx-border-color: BLACK;" text=" ¬" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Button fx:id="funOprPow" disable="true" mnemonicParsing="false" onAction="#initalPower" prefHeight="93.0" prefWidth="270.0" style="-fx-background-color: RED; -fx-border-color: BLACK;" text="pow(x,y)" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Button fx:id="funOprSqrt" disable="true" mnemonicParsing="false" onAction="#solveSqrt" prefHeight="93.0" prefWidth="231.0" style="-fx-background-color: RED; -fx-border-color: BLACK;" text="√" GridPane.rowIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Button>
+      <Button fx:id="funNumZero" mnemonicParsing="false" onAction="#getInputCharacter" prefHeight="119.0" prefWidth="437.0" text="0" GridPane.rowIndex="5" />
+      <TextField fx:id="display" editable="false" prefHeight="80.0" prefWidth="294.0" GridPane.columnSpan="4" />
+      <Button mnemonicParsing="false" onAction="#showMemory" prefHeight="59.0" prefWidth="93.0" text="Memory" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Button fx:id="commaBtn" depthTest="DISABLE" disable="true" mnemonicParsing="false" onAction="#getInputCharacter" prefHeight="53.0" prefWidth="30.0" text="." GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="5">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#clearDisplay" prefHeight="52.0" prefWidth="34.0" text="C" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
    </children>
 </GridPane>
